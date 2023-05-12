@@ -60,4 +60,8 @@
     width: 25px;
     height: 25px;
   }
+
+  .footer-link__github {
+    font-size: 15px;
+  }
 }

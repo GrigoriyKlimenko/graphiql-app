@@ -16,6 +16,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/graphiql" element={<Graphiql />} />
+            <Route path="/sign-in" element={<Graphiql />} />
+            <Route path="/sign-up" element={<Graphiql />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
