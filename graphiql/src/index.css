@@ -48,9 +48,6 @@ ul {
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1 1 auto;
   padding: 20px 0;
 }
