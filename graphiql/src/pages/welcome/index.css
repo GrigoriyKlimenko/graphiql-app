@@ -1,0 +1,95 @@
+.welcome__content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  column-gap: 10px;
+}
+
+.welcome__info {
+  flex: 1 1 50%;
+}
+
+.welcome__image {
+  flex: 1 1 20%;
+}
+
+.welcome__title {
+  padding-bottom: 5px;
+}
+
+.welcome__description {
+  padding-bottom: 30px;
+  color: #9b9a9a;
+  font-size: 25px;
+}
+
+.welcome__course {
+  padding-bottom: 70px;
+  font-size: 40px;
+  color: #c7c7c7;
+}
+
+.team__text {
+  padding-bottom: 10px;
+  font-size: 40px;
+  color: #1c97db;
+}
+
+.team-list {
+  padding-left: 60px;
+}
+
+.team-list__item {
+  padding-bottom: 15px;
+  font-size: 25px;
+  list-style-type: square;
+}
+
+.team-list__item:last-child {
+  padding-bottom: 0;
+}
+
+.team-list__item ::before {
+  content: '-';
+}
+
+.welcome__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-image {
+  width: 456px;
+  height: 512px;
+}
+
+.icon_graphiql {
+  background-image: url(/src/assets/icon-graphql.png);
+}
+
+@media (max-width: 1285px) {
+  .welcome-image {
+    width: calc(220px + (456 - 220) * ((100vw - 768px) / (1285 - 768)));
+    height: calc(247px + (512 - 247) * ((100vw - 768px) / (1285 - 768)));
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome__image {
+    display: none;
+  }
+
+  .welcome__course {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 572px) {
+  .welcome__title,
+  .welcome__description,
+  .welcome__course,
+  .team__text {
+    text-align: center;
+  }
+}

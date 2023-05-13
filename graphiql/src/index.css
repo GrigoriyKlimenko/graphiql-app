@@ -48,7 +48,11 @@ ul {
 }
 
 .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1 1 auto;
+  padding: 20px 0;
 }
 
 .icon {
@@ -74,4 +78,10 @@ ul {
 .button:hover {
   background-color: #e8b005;
   transition: all 0.3s ease-out;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #5163ba;
 }
