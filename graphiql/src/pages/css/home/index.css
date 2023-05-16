@@ -2,6 +2,13 @@
   padding-top: 100px;
 }
 
+.welcome__buttons {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 20px;
+  padding-bottom: 50px;
+}
+
 .welcome__content {
   width: 100%;
   height: auto;

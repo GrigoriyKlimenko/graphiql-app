@@ -1,5 +1,6 @@
 import { IAuthContextValue, useAuth } from '@/contexts/AuthContext';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './css/home/index.css';
 
@@ -19,6 +20,14 @@ const Home = () => {
       <div>{currentUser ? userLinks : 'Need authorize an account'}</div>
       <section className="welcome">
         <div className="welcome__container container">
+          <div className="welcome__buttons">
+            <NavLink className="button" to="/login">
+              Sign in
+            </NavLink>
+            <NavLink className="button" to="/signup">
+              Sign up
+            </NavLink>
+          </div>
           <div className="welcome__content">
             <div className="welcome__info">
               <h1 className="welcome__title">
