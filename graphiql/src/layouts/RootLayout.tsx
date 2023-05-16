@@ -12,7 +12,7 @@ export default function RootLayout() {
           <AuthButtons />
         </nav>
       </header>
-      <main className="d-flex " style={{ minHeight: '100vh' }}>
+      <main className="main">
         <Outlet />
       </main>
       <Footer />
