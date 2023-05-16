@@ -115,4 +115,8 @@
   .team__text {
     text-align: center;
   }
+
+  .welcome__message-block .welcome__buttons {
+    justify-content: center;
+  }
 }
