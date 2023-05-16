@@ -19,6 +19,12 @@
 
 .footer-link {
   color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+  transition: all 0.3s ease-out;
 }
 
 .footer-link__github {
