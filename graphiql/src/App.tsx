@@ -1,30 +1,49 @@
 import React from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import Welcome from './pages/welcome';
-import Graphiql from './pages/graphiql';
-import NotFound from './pages/404';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
-import './App.css';
+import Signup from '@/pages/Signup';
+import AuthProvider from './contexts/AuthContext';
+import { createRoutesFromElements, Route, RouterProvider } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
+import RootLayout from './layouts/RootLayout';
+import Login from './pages/Login';
+import Playground from './pages/Playground';
+import Dashboard from './pages/Dashboard';
+import PrivateRoute from './components/auth/PrivateRoute';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
-const App = () => {
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route
+        path="/playground"
+        element={
+          <PrivateRoute>
+            <Playground />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
+
+function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/graphiql" element={<Graphiql />} />
-            <Route path="/sign-in" element={<Graphiql />} />
-            <Route path="/sign-up" element={<Graphiql />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
-};
+}
 
 export default App;

@@ -13,6 +13,11 @@
     "strict": true,
     "skipLibCheck": true,
     "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@ui/*": ["components/UI/*"]
+    },
     "resolveJsonModule": true
   },
   "include": ["vite.config.ts", "./src/**/*"]
