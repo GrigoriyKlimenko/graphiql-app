@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <div>{currentUser ? userLinks : 'Need authorize an account'}</div>
+      <div className="container">{currentUser ? userLinks : 'Need authorize an account'}</div>
       <section className="welcome">
         <div className="welcome__container container">
           <div className="welcome__buttons">
