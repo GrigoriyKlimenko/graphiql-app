@@ -8,7 +8,6 @@ export default function RootLayout() {
     <div className="root-layout">
       <header>
         <nav className="d-flex">
-          <h1>GraphiQl</h1>
           <AuthButtons />
         </nav>
       </header>

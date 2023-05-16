@@ -9,6 +9,18 @@
   padding-bottom: 50px;
 }
 
+.welcome__message-block .welcome__buttons {
+  justify-content: flex-start;
+}
+
+.welcome__buttons.hidden {
+  display: none;
+}
+
+.message-block__text {
+  color: #fb0000;
+}
+
 .welcome__content {
   width: 100%;
   height: auto;

@@ -7,20 +7,19 @@ import './css/home/index.css';
 const Home = () => {
   const { currentUser } = useAuth() as IAuthContextValue;
 
-  const userLinks = (
-    <>
-      <Link to="/playground">To Playground!</Link>
-      <br />
-      <Link to="/dashboard">Profile</Link>
-    </>
-  );
+  //   const userLinks = (
+  //     <>
+  //       <Link to="/playground">To Playground!</Link>
+  //       <br />
+  //       <Link to="/dashboard">Profile</Link>
+  //     </>
+  //   );
 
   return (
     <div>
-      <div className="container">{currentUser ? userLinks : 'Need authorize an account'}</div>
       <section className="welcome">
         <div className="welcome__container container">
-          <div className="welcome__buttons">
+          <div className={currentUser ? 'welcome__buttons hidden' : 'welcome__buttons'}>
             <NavLink className="button" to="/login">
               Sign in
             </NavLink>
@@ -40,6 +39,20 @@ const Home = () => {
               <p className="welcome__course">
                 RS School Course: <span>"React"</span>
               </p>
+              <div className="welcome__message-block">
+                {currentUser ? (
+                  <div className="welcome__buttons">
+                    <NavLink className="button" to="/playground">
+                      To Playground
+                    </NavLink>
+                    <NavLink className="button" to="/dashboard">
+                      Profile
+                    </NavLink>
+                  </div>
+                ) : (
+                  <p className="message-block__text">Need authorize an account</p>
+                )}
+              </div>
               <div className="welcome__team">
                 <p className="team__text">Our team:</p>
                 <ul className="team-list">
