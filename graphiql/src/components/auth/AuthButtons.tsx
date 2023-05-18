@@ -9,15 +9,9 @@ const AuthButtons = () => {
   const location = useLocation();
   return (
     <>
-      {!['/login', '/signup'].includes(location.pathname) &&
-        (currentUser ? (
-          <Button onClick={() => logout()}>Log out</Button>
-        ) : (
-          <>
-            <Button onClick={() => navigate('/login')}>Log in</Button>
-            <Button onClick={() => navigate('/signup')}>Sign up</Button>
-          </>
-        ))}
+      {!['/login', '/signup'].includes(location.pathname) && currentUser && (
+        <Button onClick={() => logout()}>Log out</Button>
+      )}
     </>
   );
 };
