@@ -5,7 +5,7 @@ import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // ------------------------------apollo------------------------------
 const client = new ApolloClient({
