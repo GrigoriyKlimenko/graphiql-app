@@ -5,6 +5,10 @@
 .ide button {
   margin-bottom: 1vh;
 }
+.ide__controls {
+  display: flex;
+  gap: 5px;
+}
 .ide__wrapper {
   display: flex;
   flex-direction: row;

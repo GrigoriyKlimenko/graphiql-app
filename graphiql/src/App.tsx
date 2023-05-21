@@ -5,11 +5,11 @@ import { createRoutesFromElements, Route, RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from './layouts/RootLayout';
 import Login from './pages/Login';
-import Playground from './pages/Playground';
+import Playground from './pages/Playground/Playground';
 import Dashboard from './pages/Dashboard';
+import Home from './pages/Home/Home';
+import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
