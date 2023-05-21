@@ -2,7 +2,7 @@ import { IAuthContextValue, useAuth } from '@/contexts/AuthContext';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './css/home/index.css';
+import './styles.css';
 
 const Home = () => {
   const { currentUser } = useAuth() as IAuthContextValue;
@@ -30,14 +30,14 @@ const Home = () => {
           <div className="welcome__content">
             <div className="welcome__info">
               <h1 className="welcome__title">
-                The project <span>"GraphiQL"</span>
+                The project <span>&ldquo;GraphiQL&rdquo;</span>
               </h1>
               <p className="welcome__description">
                 GraphiQL is a playground/IDE for graphQL requests.
               </p>
 
               <p className="welcome__course">
-                RS School Course: <span>"React"</span>
+                RS School Course: <span>&ldquo;React&rdquo;</span>
               </p>
               <div className="welcome__message-block">
                 {currentUser ? (
