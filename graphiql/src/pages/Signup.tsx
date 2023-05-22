@@ -3,6 +3,8 @@ import { Card, Form, Button, Alert } from 'react-bootstrap';
 import { IAuthContextValue, useAuth } from '@/contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthLayout from '@/layouts/AuthLayout';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "@components/LanguageSwitcher/LanguageSwitcher";
 
 const Signup = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -12,6 +14,7 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (currentUser) {
@@ -28,12 +31,14 @@ const Signup = () => {
       )
     ) {
       return setError(
-        'Password should contain minimum 8 symbols, at least one letter, one digit, one special character.'
+        t(
+          'Password should contain minimum 8 symbols, at least one letter, one digit, one special character.'
+        )
       );
     }
 
     if (passwordRef.current?.value !== passwordConfirmRef.current?.value) {
-      return setError('Passwords do not match.');
+      return setError(t('Passwords do not match.'));
     }
 
     try {
@@ -42,7 +47,7 @@ const Signup = () => {
       await signup(emailRef.current?.value as string, passwordRef.current?.value as string);
       navigate('/playground');
     } catch {
-      setError('Failed to create an account.');
+      setError(t('Failed to create an account.'));
     }
     setLoading(false);
   };
@@ -51,29 +56,32 @@ const Signup = () => {
     <AuthLayout>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+          <h2 className="text-center mb-4">{t('Sign Up')}</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>{t('Email')}</Form.Label>
               <Form.Control type="email" required ref={emailRef} />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>{t('Password')}</Form.Label>
               <Form.Control type="password" required ref={passwordRef} />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>{t('Password Confirmation')}</Form.Label>
               <Form.Control type="password" required ref={passwordConfirmRef} />
             </Form.Group>
             <Button disabled={loading} type="submit" className="w-100 mt-3">
-              Sign Up
+              {t('Sign up')}
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log in</Link>
+        {t('Already have an account?')} <Link to="/login">{t('Log in')}</Link>
+      </div>
+      <div className="d-flex justify-content-center mt-2">
+        <LanguageSwitcher />
       </div>
     </AuthLayout>
   );
