@@ -7,9 +7,9 @@ import RootLayout from './layouts/RootLayout';
 import Login from './pages/Login';
 import Playground from './pages/Playground/Playground';
 import Dashboard from './pages/Dashboard';
-import PrivateRoute from './components/Auth/PrivateRoute';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
