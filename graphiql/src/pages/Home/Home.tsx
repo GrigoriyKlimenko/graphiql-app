@@ -3,9 +3,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const { currentUser } = useAuth() as IAuthContextValue;
+  const { t } = useTranslation();
 
   //   const userLinks = (
   //     <>
@@ -19,42 +22,44 @@ const Home = () => {
     <div>
       <section className="welcome">
         <div className="welcome__container container">
-          <div className={currentUser ? 'welcome__buttons hidden' : 'welcome__buttons'}>
-            <NavLink className="button" to="/login">
-              Sign in
-            </NavLink>
-            <NavLink className="button" to="/signup">
-              Sign up
-            </NavLink>
+          <div className="welcome__control">
+            <LanguageSwitcher />
+            <div className={currentUser ? 'welcome__buttons hidden' : 'welcome__buttons'}>
+              <NavLink className="button" to="/login">
+                {t('Log in')}
+              </NavLink>
+              <NavLink className="button" to="/signup">
+                {t('Sign up')}
+              </NavLink>
+            </div>
           </div>
           <div className="welcome__content">
             <div className="welcome__info">
               <h1 className="welcome__title">
-                The project <span>&ldquo;GraphiQL&rdquo;</span>
+                {t('The project')} <span>&ldquo;GraphiQL&rdquo;</span>
               </h1>
               <p className="welcome__description">
-                GraphiQL is a playground/IDE for graphQL requests.
-              </p>
-
-              <p className="welcome__course">
-                RS School Course: <span>&ldquo;React&rdquo;</span>
+                {t('GraphiQL is a playground/IDE for graphQL requests.')}
               </p>
               <div className="welcome__message-block">
                 {currentUser ? (
                   <div className="welcome__buttons">
                     <NavLink className="button" to="/playground">
-                      To Playground
+                      {t('To Playground')}
                     </NavLink>
                     <NavLink className="button" to="/dashboard">
-                      Profile
+                      {t('Profile')}
                     </NavLink>
                   </div>
                 ) : (
-                  <p className="message-block__text">Need authorize an account</p>
+                  <p className="message-block__text">{t('Need authorize an account')}</p>
                 )}
               </div>
+              <p className="welcome__course">
+                {t('RS School Course')}: <span>&ldquo;React&rdquo;</span>
+              </p>
               <div className="welcome__team">
-                <p className="team__text">Our team:</p>
+                <p className="team__text">{t('Our team')}:</p>
                 <ul className="team-list">
                   <li className="team-list__item">Grigoriy Klimenko</li>
                   <li className="team-list__item">Ilya Vylegzhanin</li>
