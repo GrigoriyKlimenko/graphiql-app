@@ -1,0 +1,22 @@
+{
+  "Already have an account?": "Уже есть аккаунт?",
+  "Email": "Почта",
+  "Failed to log in.": "Ошибка при входе.",
+  "Failed to create an account.": "Ошибка при создании аккаунта.",
+  "GraphiQL is a playground/IDE for graphQL requests.": "GraphiQL это \"песочница\"/IDE для запросов graphQL.",
+  "Log in": "Войти",
+  "Log In": "Вход в систему",
+  "Need an account?": "Еще не зарегистрировались?",
+  "Need authorize an account": "Для продолжения необходимо авторизироваться",
+  "Our team": "Наша команда",
+  "Password": "Пароль",
+  "Password Confirmation": "Подтверждение пароля",
+  "Passwords do not match.": "Пароли не совпадают.",
+  "Password should contain minimum 8 symbols, at least one letter, one digit, one special character.": "Пароль должен содержать минимум 8 символов, хотя бы одну букву, одну цифру, один спецсимвол.",
+  "Profile": "Профиль",
+  "RS School Course": "Курс школы RS",
+  "Sign up": "Зарегистрироваться",
+  "Sign Up": "Регистрация",
+  "The project": "Проект",
+  "To Playground": "Перейти к запросам"
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 import AuthButtons from '@components/auth/AuthButtons';
+import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
 
 const Header = () => {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
@@ -21,9 +22,12 @@ const Header = () => {
   return (
     <div className={`header ${isPageScrolled ? 'sticky' : ''}`}>
       <h2>GraphiQL</h2>
-      <nav className="d-flex">
-        <AuthButtons />
-      </nav>
+      <div className="header-control">
+        <LanguageSwitcher />
+        <nav className="d-flex">
+          <AuthButtons />
+        </nav>
+      </div>
     </div>
   );
 };

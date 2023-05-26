@@ -1,0 +1,22 @@
+{
+  "Already have an account?": "Already have an account?",
+  "Email": "Email",
+  "Failed to create an account.": "Failed to create an account.",
+  "Failed to log in.": "Failed to log in.",
+  "GraphiQL is a playground/IDE for graphQL requests.": "GraphiQL is a playground/IDE for graphQL requests.",
+  "Log in": "Log in",
+  "Log In": "Log In",
+  "Need an account?": "Need an account?",
+  "Need authorize an account": "Need authorize an account",
+  "Our team": "Our team",
+  "Password": "Password",
+  "Password Confirmation": "Password Confirmation",
+  "Passwords do not match.": "Passwords do not match.",
+  "Password should contain minimum 8 symbols, at least one letter, one digit, one special character.": "Password should contain minimum 8 symbols, at least one letter, one digit, one special character.",
+  "Profile": "Profile",
+  "RS School Course": "RS School Course",
+  "Sign up": "Sign up",
+  "Sign Up": "Sign Up",
+  "The project": "The project",
+  "To Playground": "To Playground"
+}
