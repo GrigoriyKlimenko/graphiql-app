@@ -10,8 +10,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // ------------------------------apollo------------------------------
 const client = new ApolloClient({
-  uri: 'https://flyby-router-demo.herokuapp.com/',
-  cache: new InMemoryCache(),
+  uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+  cache: new InMemoryCache({
+    addTypename: false,
+  }),
 });
 // ------------------------------apollo------------------------------
 
