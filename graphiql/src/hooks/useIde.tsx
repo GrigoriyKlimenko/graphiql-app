@@ -25,7 +25,7 @@ const GET_LOCATIONS = gql`
 `;
 
 const useIde = () => {
-  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [currentInput, setCurrentInput] = useState<string>('');
   const [currentVarInput, setCurrentVarInput] = useState<string>('');
   const [currentOutput, setCurrentOutput] = useState<string>('');
@@ -87,10 +87,14 @@ const useIde = () => {
     }
   };
 
-  const handleInput = (str: string) => {
-    prettifyInput(str);
-    const cursorIndex = str.indexOf('__cArEt') + 7;
+  const handleInput = (query: string, variables: string) => {
+    prettifyInput(query);
+    const cursorIndex = query.indexOf('__cArEt') + 7;
     setCurrentInput((str) => str.replace(/__cArEt/g, ''));
+    if (variables) {
+      const prettifiedVariables = prettifyVariables(variables);
+      setCurrentVarInput(prettifiedVariables);
+    }
     const textarea = inputRef.current as HTMLTextAreaElement;
     textarea.focus();
     setTimeout(() => {
