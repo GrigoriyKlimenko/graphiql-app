@@ -8,11 +8,13 @@ import Documentation from './Documentation';
 const Ide = () => {
   const {
     handleChange,
+    handleVarChange,
     handleQuery,
     inputRef,
     handleInput,
     prettifyInput,
     currentInput,
+    currentVarInput,
     currentOutput,
   } = useIde();
 
@@ -29,7 +31,19 @@ const Ide = () => {
       <div className="ide__wrapper">
         <Documentation handleInput={handleInput} />
         <div className="ide__input-side">
-          <Form.Control as="textarea" ref={inputRef} value={currentInput} onChange={handleChange} />
+          <Form.Control
+            as="textarea"
+            ref={inputRef}
+            value={currentInput}
+            onChange={handleChange}
+            placeholder="input request here..."
+          />
+          <Form.Control
+            as="textarea"
+            value={currentVarInput}
+            onChange={handleVarChange}
+            placeholder="input variables here..."
+          />
         </div>
         <div className="ide__output-side">
           <pre>{currentOutput}</pre>
