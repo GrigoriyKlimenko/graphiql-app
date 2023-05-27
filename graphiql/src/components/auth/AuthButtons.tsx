@@ -10,7 +10,12 @@ const AuthButtons = () => {
   return (
     <>
       {!['/login', '/signup'].includes(location.pathname) && currentUser && (
-        <Button onClick={() => logout()}>Log out</Button>
+        <div className="d-flex gap-2">
+          <Button onClick={() => navigate('/dashboard')}>Profile</Button>
+          <Button variant="danger" onClick={() => logout()}>
+            Log out
+          </Button>
+        </div>
       )}
     </>
   );

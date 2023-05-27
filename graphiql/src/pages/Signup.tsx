@@ -4,7 +4,7 @@ import { IAuthContextValue, useAuth } from '@/contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthLayout from '@/layouts/AuthLayout';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from "@components/LanguageSwitcher/LanguageSwitcher";
+import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
 
 const Signup = () => {
   const emailRef = useRef<HTMLInputElement>(null);

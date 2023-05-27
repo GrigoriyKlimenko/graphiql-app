@@ -14,15 +14,23 @@ interface docObject {
 
 const Documentation: FC<PropsWithChildren<DocumentationProps>> = ({ handleInput }) => {
   return (
-    <div>
-      <h2>Documentation</h2>
-      {data.map((obj: docObject, idx) => {
-        return (
-          <Button key={idx} onClick={() => handleInput(obj.body, obj?.variables || '')}>
-            {obj.name}
-          </Button>
-        );
-      })}
+    <div className="ide__documentation__wrapper">
+      <h2 className="d-block">Documentation</h2>
+
+      <div className="ide__documentation w-100">
+        {data.map((obj: docObject, idx) => {
+          return (
+            <Button
+              variant="outline-primary"
+              key={idx}
+              onClick={() => handleInput(obj.body, obj?.variables || '')}
+              className="d-block w-100"
+            >
+              {obj.name}
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };
