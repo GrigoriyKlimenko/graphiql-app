@@ -5,6 +5,7 @@ import wand from '../../assets/magic-wand.svg';
 import useIde from '@/hooks/useIde';
 import Documentation from './Documentation';
 import { useTranslation } from 'react-i18next';
+import VariablesArea from './VariablesArea';
 
 const Ide = () => {
   const {
@@ -17,6 +18,8 @@ const Ide = () => {
     currentInput,
     currentVarInput,
     currentOutput,
+    isVariablesOpen,
+    setIsVariablesOpen,
   } = useIde();
   const { t } = useTranslation();
 
@@ -42,11 +45,12 @@ const Ide = () => {
                 onChange={handleChange}
                 placeholder={t('input request here...') as string}
               />
-              <Form.Control
-                as="textarea"
+              <VariablesArea
                 value={currentVarInput}
                 onChange={handleVarChange}
                 placeholder={t('input variables here...') as string}
+                isOpen={isVariablesOpen}
+                openHandler={() => setIsVariablesOpen(!isVariablesOpen)}
               />
             </div>
             <div className="ide__output-side">
