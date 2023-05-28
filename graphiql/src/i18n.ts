@@ -8,7 +8,7 @@ i18next
   .use(backend)
   .use(initReactI18next)
   .init({
-    lng: 'en',
+    lng: localStorage.getItem('currentLanguage') || 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,

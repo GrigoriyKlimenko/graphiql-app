@@ -4,6 +4,7 @@ import '../../pages/css/playground/index.css';
 import wand from '../../assets/magic-wand.svg';
 import useIde from '@/hooks/useIde';
 import Documentation from './Documentation';
+import { useTranslation } from 'react-i18next';
 
 const Ide = () => {
   const {
@@ -17,6 +18,7 @@ const Ide = () => {
     currentVarInput,
     currentOutput,
   } = useIde();
+  const { t } = useTranslation();
 
   return (
     <div className="ide">
@@ -25,7 +27,7 @@ const Ide = () => {
         <div className="d-flex w-100 flex-column">
           <div className="ide__controls">
             <Button onClick={handleQuery} title="send request">
-              GO!
+              {t('GO!')}
             </Button>
             <Button onClick={() => prettifyInput(currentInput)} title="prettify">
               <img src={wand} alt="prettify" />
@@ -38,13 +40,13 @@ const Ide = () => {
                 ref={inputRef}
                 value={currentInput}
                 onChange={handleChange}
-                placeholder="input request here..."
+                placeholder={t('input request here...') as string}
               />
               <Form.Control
                 as="textarea"
                 value={currentVarInput}
                 onChange={handleVarChange}
-                placeholder="input variables here..."
+                placeholder={t('input variables here...') as string}
               />
             </div>
             <div className="ide__output-side">
