@@ -1,7 +1,6 @@
 import { IAuthContextValue, useAuth } from '@/contexts/AuthContext';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import './styles.css';
 import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
@@ -9,14 +8,6 @@ import { useTranslation } from 'react-i18next';
 const Home = () => {
   const { currentUser } = useAuth() as IAuthContextValue;
   const { t } = useTranslation();
-
-  //   const userLinks = (
-  //     <>
-  //       <Link to="/playground">To Playground!</Link>
-  //       <br />
-  //       <Link to="/dashboard">Profile</Link>
-  //     </>
-  //   );
 
   return (
     <div>

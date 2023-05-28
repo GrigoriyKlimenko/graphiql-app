@@ -36,7 +36,7 @@ const Ide = () => {
               <img src={wand} alt="prettify" />
             </Button>
           </div>
-          <div className="w-100 d-flex gap-2 h-100">
+          <div className="ide__sides">
             <div className="ide__input-side">
               <Form.Control
                 as="textarea"
