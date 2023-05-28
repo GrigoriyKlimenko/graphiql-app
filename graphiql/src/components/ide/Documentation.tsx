@@ -34,7 +34,7 @@ const Documentation: FC<PropsWithChildren<DocumentationProps>> = ({ handleInput 
           );
         })}
         <div>
-          {`Reference: `}
+          {`${t('Reference')}: `}
           <Link to={'https://studio.apollographql.com/public/star-wars-swapi/home?variant=current'}>
             star-wars-swapi
           </Link>
