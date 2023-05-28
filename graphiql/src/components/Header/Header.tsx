@@ -9,7 +9,7 @@ const Header = () => {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const handleScroll = () => {
     const currentScroll = window.scrollY;
-    if (currentScroll > 80) {
+    if (currentScroll > 60) {
       setIsPageScrolled(true);
     } else {
       setIsPageScrolled(false);
