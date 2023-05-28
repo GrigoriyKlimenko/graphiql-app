@@ -29,7 +29,7 @@ const useIde = () => {
   const [currentInput, setCurrentInput] = useState<string>('');
   const [currentVarInput, setCurrentVarInput] = useState<string>('');
   const [currentOutput, setCurrentOutput] = useState<string>('');
-
+  const [isVariablesOpen, setIsVariablesOpen] = useState(false);
   const [getResponse, { error, data }] = useLazyQuery(GET_LOCATIONS);
 
   useEffect(() => {
@@ -92,6 +92,7 @@ const useIde = () => {
     const cursorIndex = query.indexOf('__cArEt') + 7;
     setCurrentInput((str) => str.replace(/__cArEt/g, ''));
     if (variables) {
+      setIsVariablesOpen(true);
       const prettifiedVariables = prettifyVariables(variables);
       setCurrentVarInput(prettifiedVariables);
     }
@@ -114,6 +115,8 @@ const useIde = () => {
     getResponse,
     currentOutput,
     setCurrentInput,
+    isVariablesOpen,
+    setIsVariablesOpen,
   };
 };
 

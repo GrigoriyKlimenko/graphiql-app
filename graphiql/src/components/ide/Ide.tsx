@@ -4,6 +4,8 @@ import '../../pages/css/playground/index.css';
 import wand from '../../assets/magic-wand.svg';
 import useIde from '@/hooks/useIde';
 import Documentation from './Documentation';
+import VariablesArea from './VariablesArea';
+import { Link } from 'react-router-dom';
 
 const Ide = () => {
   const {
@@ -16,6 +18,8 @@ const Ide = () => {
     currentInput,
     currentVarInput,
     currentOutput,
+    isVariablesOpen,
+    setIsVariablesOpen,
   } = useIde();
 
   return (
@@ -40,11 +44,12 @@ const Ide = () => {
                 onChange={handleChange}
                 placeholder="input request here..."
               />
-              <Form.Control
-                as="textarea"
+              <VariablesArea
                 value={currentVarInput}
                 onChange={handleVarChange}
                 placeholder="input variables here..."
+                isOpen={isVariablesOpen}
+                openHandler={() => setIsVariablesOpen(!isVariablesOpen)}
               />
             </div>
             <div className="ide__output-side">
