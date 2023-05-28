@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 interface VariablesAreaProps {
   value: string;
@@ -16,10 +17,11 @@ const VariablesArea: FC<VariablesAreaProps> = ({
   isOpen,
   openHandler,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Button variant="secondary" className="mb-0" onClick={openHandler}>
-        Variables
+        {t('Variables')}
       </Button>
       {isOpen && (
         <Form.Control as="textarea" value={value} onChange={onChange} placeholder={placeholder} />
